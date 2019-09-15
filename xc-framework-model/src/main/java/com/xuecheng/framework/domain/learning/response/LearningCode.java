@@ -14,7 +14,10 @@ import lombok.ToString;
  */
 @ToString
 public enum LearningCode implements ResultCode {
-    LEARNING_GETMEDIA_ERROR(false,45001,"搜索课程计划视频失败");
+    LEARNING_GETMEDIA_ERROR(false,45001,"搜索课程计划视频失败"),
+    CHOOSECOURSE_USERISNULl(false,45002,"选课时用户id为空"),
+    CHOOSECOURSE_TASKISNULL(false,45002,"选课时任务id为空"),
+    CHOOSECOURSE_COURSEISNULl(false,45003,"选课时课程id为空");
 
     @ApiModelProperty(value = "操作是否成功", example = "true", required = true)
     boolean success;
