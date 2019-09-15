@@ -7,7 +7,7 @@ spring:
     druid:
       url: jdbc:mysql://localhost:3306/xc_order?characterEncoding=utf-8
       username: root
-      password: mysql
+      password: root
       driverClassName: com.mysql.jdbc.Driver
       initialSize: 5  #初始建立连接数量
       minIdle: 5  #最小连接数量
@@ -25,7 +25,6 @@ spring:
     password: guest
     publisher-confirms: true
     virtual-host: /
-
 eureka:
   client:
     registerWithEureka: true #服务注册开关
