@@ -24,16 +24,16 @@ public class MyFastDfsClient {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MyFastDfsClient.class);
 
-    @Value("${fastdfs.tracker_servers}")
+    @Value("${xuecheng.fastdfs.tracker_servers}")
     private String tracker_servers;
 
-    @Value("${fastdfs.connect_timeout_in_seconds}")
+    @Value("${xuecheng.fastdfs.connect_timeout_in_seconds}")
     private int connect_timeout_in_seconds;
 
-    @Value("${fastdfs.network_timeout_in_seconds}")
+    @Value("${xuecheng.fastdfs.network_timeout_in_seconds}")
     private int network_timeout_in_seconds;
 
-    @Value("${fastdfs.charset}")
+    @Value("${xuecheng.fastdfs.charset}")
     private String charset;
 
     private TrackerClient trackerClient;
