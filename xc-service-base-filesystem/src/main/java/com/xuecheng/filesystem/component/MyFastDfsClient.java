@@ -1,6 +1,5 @@
 package com.xuecheng.filesystem.component;
 
-import com.xuecheng.filesystem.service.FileSystemService;
 import org.apache.commons.lang3.StringUtils;
 import org.csource.common.MyException;
 import org.csource.fastdfs.*;
@@ -23,18 +22,18 @@ import java.io.IOException;
 @Component
 public class MyFastDfsClient {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(FileSystemService.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MyFastDfsClient.class);
 
-    @Value("${xuecheng.fastdfs.tracker_servers}")
+    @Value("${fastdfs.tracker_servers}")
     private String tracker_servers;
 
-    @Value("${xuecheng.fastdfs.connect_timeout_in_seconds}")
+    @Value("${fastdfs.connect_timeout_in_seconds}")
     private int connect_timeout_in_seconds;
 
-    @Value("${xuecheng.fastdfs.network_timeout_in_seconds}")
+    @Value("${fastdfs.network_timeout_in_seconds}")
     private int network_timeout_in_seconds;
 
-    @Value("${xuecheng.fastdfs.charset}")
+    @Value("${fastdfs.charset}")
     private String charset;
 
     private TrackerClient trackerClient;
@@ -78,7 +77,7 @@ public class MyFastDfsClient {
             //文件原始名称
             String originalFilename = file.getOriginalFilename();
             //文件扩展名
-            String extName = StringUtils.substringAfterLast(file.getOriginalFilename(), ".");
+            String extName = StringUtils.substringAfterLast(originalFilename, ".");
             //文件id
             String filePath = null;
             try {
